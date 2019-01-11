@@ -34,9 +34,13 @@ sap.ui.controller("smax.cls07.proj1.view.Page1", {
 //	onExit: function() {
 //
 //	}
-	gotoPage2 : function(){
+	/*gotoPage2 : function(){
 		var oRouter = this.getOwnerComponent().getRouter();
 		oRouter.navTo("forPage2");
+	},*/
+	onItemSelection : function(oEvent){
+		var custId = oEvent.getSource().getDescription()
+		this.getOwnerComponent().getRouter().navTo("forPage2", { cId : custId });
 	}
 
 });

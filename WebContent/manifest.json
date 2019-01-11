@@ -1,0 +1,47 @@
+{
+ "sap.app" : {
+     "id" : "smax.cls07.proj1",
+     "dataSources" : {
+          "northwind" : {
+             "uri" : "proxy/https/services.odata.org/Northwind/Northwind.svc/"
+          }
+     }
+ },
+ "sap.ui5" : {
+		"rootView" : "smax.cls07.proj1.view.App",
+		"models" : {
+		   "" : {
+		      "dataSource" : "northwind"
+		   }
+		},
+		"routing" : {
+			"config" : {
+				"routerClass" : "sap.m.routing.Router",
+				"viewType" : "XML",
+				"controlId" : "idApp",
+				"controlAggregation" : "pages"
+			},
+			"routes" : [
+				{					
+				    "pattern" : "",
+					"name" : "home",
+					"target" : ["firstPage"]										
+				},
+				{
+					"pattern" : "toPage2/{cId}",
+					"name" : "forPage2",
+					"target" : ["secondPage"]								
+				}
+				
+			],
+			"targets" : {
+				"firstPage" : {
+					"viewName" : "smax.cls07.proj1.view.Page1"
+				},
+				"secondPage" : {
+					"viewName" : "smax.cls07.proj1.view.Page2"	
+				}
+			}
+		}
+	}
+}
